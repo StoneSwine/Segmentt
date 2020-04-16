@@ -1,0 +1,13 @@
+venv
+*.egg-info
+*.*.swp
+.pytest_cache
+.vscode
+.idea
+**/__pycache__
+*.egg
+*.jpg
+*.png
+*.PNG
+*.JPG
+out

@@ -1,0 +1,17 @@
+# SEGMENTT ==> CURRENTLY UNDER WORK
+
+DISCLAIMER:
+  This is not production code at all! This code is created by a graduate student at NTNU with doeadlines and functionality in mind. 
+
+Project in IMT4126 - Fingerprint image segmentation (FIS):
+  TASK:
+    Implement one of the recent fingerprint segmentation methods for images captured by smartphones in python
+  This python3 package is the implementation of the algorithm proposed and described by:
+    G. Bailador, B. Ríos-Sánchez, R. Sánchez-Reillo, H. Ishikawa and C. Sánchez-Ávila, 
+    "Flooding-based segmentation for contactless hand biometrics oriented to mobile devices," 
+    in IET Biometrics, vol. 7, no. 5, pp. 431-438, 9 2018.
+   
+The algorithm is modified to detect the fingertip from the rest of the hand / finge. The package is using OpenCV, which has a lot of optimized functionality for operation on images.
+
+ 
+

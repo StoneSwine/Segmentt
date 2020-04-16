@@ -1,0 +1,5 @@
+numpy==1.18.2
+opencv_python==4.2.0.32
+matplotlib==3.2.1
+pytest==5.4.1
+seaborn==0.10.0
