@@ -13,7 +13,7 @@ import seaborn as sns
 # finseg imports
 from Segmentt.flooding import segment_image
 
-WSIZ=100
+WSIZ=50
 
 def local_coherence(img, window_s=WSIZ):
   """
@@ -29,8 +29,8 @@ def local_coherence(img, window_s=WSIZ):
     for c in range(4, img.shape[1] - cs, cs):
       window = img[r:r + rs, c:c + cs]
       if window.var() != 0: # Need variance because of the constraint (gxx + gyy) < 0
-        gx = np.uint8(np.absolute(cv2.Sobel(window, cv2.CV_64F, 1, 0, ksize=3))).flatten()
-        gy = np.uint8(np.absolute(cv2.Sobel(window, cv2.CV_64F, 0, 1, ksize=3))).flatten()
+        gx = np.uint8(np.absolute(cv2.Sobel(window, cv2.CV_64F, 1, 0, ksize=5))).flatten()
+        gy = np.uint8(np.absolute(cv2.Sobel(window, cv2.CV_64F, 0, 1, ksize=5))).flatten()
 
         gxx = sum([int(x) ** 2 for x in gx])
         gyy = sum([int(y) ** 2 for y in gy])
@@ -52,8 +52,8 @@ def local_variance_mean(img, window_s=WSIZ):
     for c in range(4, img.shape[1] - cs, cs):
       window = img[r:r + rs, c:c + cs]
       if window.var() != 0:
-        mean.append((1 / cs ** 2) * np.mean(window))
-        variance.append((1 / cs ** 2) * np.var(window))
+        mean.append(np.mean(window))
+        variance.append(np.var(window))
   return variance, mean
 
 
