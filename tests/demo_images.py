@@ -12,7 +12,7 @@ def run_segment_image():
   HERE = os.path.dirname(__file__)
 
   times = []
-  demo_images = ['47_o_1_n_1.jpg','4_o_2_n_1.jpg','61_o_2_n_8.JPG', '37_i_1_n_6.jpg', '51_i_1_n_1.jpg', '47_i_1_n_8.JPG', '15_i_2_n_5.jpg',
+  demo_images = ['47_o_1_n_1.jpg', '4_o_2_n_1.jpg','61_o_2_n_8.JPG', '37_i_1_n_6.jpg', '51_i_1_n_1.jpg', '47_i_1_n_8.JPG', '15_i_2_n_5.jpg',
                  '64_o_1_n_6.JPG', '44_o_2_n_2.jpg']
 
   for filename in demo_images:
