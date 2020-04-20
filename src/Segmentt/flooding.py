@@ -16,7 +16,7 @@ class floodseg():
   """
   def normalisation(self, cv2_img, ht_m):
     # Not sure if this is right: Normalizing image to max value of mean in the center area
-    # Reduce the intensity of the image, kind of works though.. i leave it as it is for now
+    # Reduce the intensity of the image
     return cv2.normalize(cv2_img, None, 0, ht_m,
                          norm_type=cv2.NORM_MINMAX)
 
@@ -44,12 +44,10 @@ class floodseg():
       return comb
 
   # TODO: This diff needs to be adjusted / set more dynamically
-  def flooding_segmentation(self, img, H, W, diff=3):  # Taken from https://stackoverflow.com/a/46667829 :
+  def flooding_segmentation(self, img, H, W, diff=3):  # Inspired by https://stackoverflow.com/a/46667829 :
     # The diff indicates: Maximal lower/upper brightness/color difference between the currently observed pixel and one of
     # its neighbors belonging to the component, or a seed pixel being added to the component
     # A lower diff works better ==> Can be adjusted...
-
-    # https://docs.opencv.org/2.4/modules/imgproc/doc/miscellaneous_transformations.html?highlight=floodfill
 
     seed = (W // 2, H // 2)
 
@@ -72,7 +70,7 @@ class floodseg():
 
 def segment_image(img, offset=3, DEMO=False):
   """
-    img: as numpy arrray
+    img: as numpy arrray (RGB)
     offset: in percent (hand_target)
     DEMO: display the image with the mask => Default false
   """

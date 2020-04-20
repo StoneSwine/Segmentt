@@ -12,8 +12,9 @@ Project in IMT4126 - Fingerprint image segmentation (FIS):
     "Flooding-based segmentation for contactless hand biometrics oriented to mobile devices," 
     in IET Biometrics, vol. 7, no. 5, pp. 431-438, 9 2018.
    
-The algorithm is modified to detect the fingertip from the rest of the hand / finger. The package is using OpenCV, which
-has a lot of optimized functionality for operation on images.
+The algorithm is modified to detect the finger instead of its original purpose of detecting the hand. The package is
+using OpenCV, which has a lot of optimized functionality for operation on images, and is used as much as possible to
+increase the performance.
 
 ## INSTALLATION (*NIX):
     1. Make sure you have python3
@@ -25,7 +26,8 @@ has a lot of optimized functionality for operation on images.
     4. Run the demo-programs:
         $ python3 ./src/demo_images.py
 
-
-
+# MISC:
+    The documentation for the algorithm can be found in the following file "./src/Segmentt/README"
+    To use the algorithm, see the demo programs as well as the documentation above.
  
 

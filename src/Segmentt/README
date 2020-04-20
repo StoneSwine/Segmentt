@@ -1,0 +1,40 @@
+## FLOODING.PY DOCUMENTATION:
+    The public function is "segment_image(img, offset=3, DEMO=False)".
+        img:    RGB (24-bit) image represented as a numpy array ( read with cv2.imread() and the flag cv2.IMREAD_UNCHANGED)
+        offset: The percent age of the with and heigth of the image which is considered to be a part of "hand_target"
+        DEMO:   Run the program with demo output (True,False)
+
+        The function returns three images in grayscale (8-bit)
+            1. 8 bit image with applied mask and cropped to size
+            2. 8 bit image where the foreground is segmented
+            3. 8 bit image where the background is segmented (inverse of foreground) --> not really needed
+
+
+    "Private" functions:
+        # STEP 1 --> def normalisation(self, cv2_img, ht_m):
+            Normalizing image to max value of mean in the center area, which reduces the intensity of the image.
+            Takes a 24 bit image (numpy array) as input, along with the normalisation value and returns the normalized
+            image
+
+        # STEP 2 --> def spacecolourconversion(self, norimg):
+            Converts the image to the LAB colorspace
+
+        # STEP 3 --> def binarisation(self, b_layer):
+            Utilises otsus thresholding method to threshold the image "b_layer" as well as finding the threshold for the edge
+            detection step
+
+        # STEP 4 --> def edgesdetection(self, img, t):
+            Takes an image and an array "t" of min and max values to perform canny edge detection.
+            Returns the discovered edges
+
+        # STEP 5 --> def add_x_images(self, images):
+            Sums two or more images (does not wrap)
+
+        # STEP 6 --> def flooding_segmentation(self, img, H, W, diff=3):
+            Performs recursive floodfilling, and morphological operations on the image "img"
+            The "diff" parameter indicates the Maximal lower/upper brightness/color difference between the
+            currently observed pixel and one of its neighbors belonging to the component, or a seed pixel being added
+            to the component.
+            H and W is the Height and with of the image
+
+       
