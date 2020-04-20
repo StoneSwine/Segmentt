@@ -12,7 +12,8 @@ ToDo:
 
 
 class floodseg():
-
+  """
+  """
   def normalisation(self, cv2_img, ht_m):
     # Not sure if this is right: Normalizing image to max value of mean in the center area
     # Reduce the intensity of the image, kind of works though.. i leave it as it is for now
@@ -123,6 +124,6 @@ def segment_image(img, offset=3, DEMO=False):
   foreground = cv2.bitwise_and(img, img, None, mask[0:H, 0:W])  # apply mask to image
   background = cv2.bitwise_and(img, img, None, cv2.bitwise_not(mask[0:H, 0:W]))  # invert the mask to get the background
 
-  # returns cropped image with mask, foreground and background of image
+  # returns croped image to the mask, foreground and background of image
   return cv2.bitwise_and(img, img, None, mask[0:H, 0:W])[Ycrop:Ycrop + Hcrop,
          Xcrop:Xcrop + Wcrop], foreground, background
