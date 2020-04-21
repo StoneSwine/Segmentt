@@ -6,7 +6,7 @@ DISCLAIMER:
 
 Project in IMT4126 - Fingerprint image segmentation (FIS):
   TASK:
-    Implement one of the recent fingerprint segmentation methods for images captured by saxophone's in python
+    Implement one of the recent fingerprint segmentation methods for contactless fingerprint captures
   This python3 package is the implementation of the algorithm proposed and described by:
     G. Bailador, B. Ríos-Sánchez, R. Sánchez-Reillo, H. Ishikawa and C. Sánchez-Ávila, 
     "Flooding-based segmentation for contactless hand biometrics oriented to mobile devices," 
