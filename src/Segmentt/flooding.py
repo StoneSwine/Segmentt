@@ -14,6 +14,7 @@ ToDo:
 class floodseg():
   """
   """
+
   def normalisation(self, cv2_img, ht_m):
     # Not sure if this is right: Normalizing image to max value of mean in the center area
     # Reduce the intensity of the image
